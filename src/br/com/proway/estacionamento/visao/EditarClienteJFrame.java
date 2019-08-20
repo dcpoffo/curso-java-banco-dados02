@@ -6,9 +6,7 @@
 package br.com.proway.estacionamento.visao;
 
 import br.com.proway.estacionamento.dao.ClienteDAO;
-import br.com.proway.estacionamento.dao.EntradaSaidaDAO;
 import br.com.proway.estacionamento.modelo.Cliente;
-import br.com.proway.estacionamento.modelo.EntradaSaida;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,6 +40,7 @@ public class EditarClienteJFrame extends javax.swing.JFrame {
      */
     public EditarClienteJFrame() {
         initComponents();
+        jTextFieldNome.requestFocus();
     }
 
     /**
@@ -244,7 +243,11 @@ public class EditarClienteJFrame extends javax.swing.JFrame {
         boolean alterou = dao.alterar(cliente);
         
         if (alterou) {
-            JOptionPane.showMessageDialog(this, "As informações foram alteradas con sucesso!");
+            int opcao = JOptionPane.showConfirmDialog(this, "As informações foram alteradas con sucesso. Deseja sair?", "ATENÇÃO", JOptionPane.YES_NO_OPTION);
+            if (opcao == JOptionPane.YES_OPTION) {
+                dispose();
+            }
+        // JOptionPane.showMessageDialog(this, "As informações foram alteradas con sucesso!");
         } else {
             JOptionPane.showMessageDialog(this, "Não foi possível alterar as informações");
         }
