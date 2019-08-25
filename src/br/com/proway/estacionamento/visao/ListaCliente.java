@@ -54,6 +54,7 @@ public class ListaCliente extends javax.swing.JFrame {
             }
         });
 
+        jButtonCadastrar.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonCadastrar.setText("Cadastrar");
         jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +62,7 @@ public class ListaCliente extends javax.swing.JFrame {
             }
         });
 
+        jButtonEditar.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonEditar.setText("Editar");
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +70,7 @@ public class ListaCliente extends javax.swing.JFrame {
             }
         });
 
+        jButtonApagar.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonApagar.setText("Apagar");
         jButtonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

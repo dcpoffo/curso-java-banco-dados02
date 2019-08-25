@@ -50,6 +50,7 @@ public class CadastroEntradaJFrame extends javax.swing.JFrame {
         jComboBoxModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fusca", "Corvette", "Chevete", "Olala", "Gol Quadrado", "Uno da Sky" }));
         jComboBoxModelo.setSelectedIndex(-1);
 
+        jButtonSalvar.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +58,7 @@ public class CadastroEntradaJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButtonSalvarENovo.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonSalvarENovo.setText("Salvar e Novo");
         jButtonSalvarENovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +94,7 @@ public class CadastroEntradaJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addComponent(jLabel2)
                                 .addComponent(jFormattedTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)))
+                        .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

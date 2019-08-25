@@ -52,6 +52,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="jButtonListarClientes">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Clientes"/>
       </Properties>
       <Events>
@@ -60,6 +63,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonListarEntradaSaida">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Entradas/Saidas"/>
       </Properties>
       <Events>
@@ -68,6 +74,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="13" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>

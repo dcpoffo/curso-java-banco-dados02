@@ -36,6 +36,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jButtonListarClientes.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonListarClientes.setText("Clientes");
         jButtonListarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,6 +44,7 @@ public class MenuJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButtonListarEntradaSaida.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButtonListarEntradaSaida.setText("Entradas/Saidas");
         jButtonListarEntradaSaida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +52,7 @@ public class MenuJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jButton1.setText("Sair");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
