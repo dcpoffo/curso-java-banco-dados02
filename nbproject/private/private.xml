@@ -4,8 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/65316/Documents/GitHub/ExemploBancoDados01/src/br/com/proway/estacionamento/modelo/Venda.java</file>
-            <file>file:/C:/Users/65316/Documents/GitHub/ExemploBancoDados01/src/br/com/proway/estacionamento/dao/BaseDAO.java</file>
+            <file>file:/C:/Users/65316/Documents/GitHub/ExemploBancoDados01/src/br/com/proway/estacionamento/visao/CadastroVendaJFrame.java</file>
             <file>file:/C:/Users/65316/Documents/GitHub/ExemploBancoDados01/src/br/com/proway/estacionamento/dao/VendaDAO.java</file>
+            <file>file:/C:/Users/65316/Documents/GitHub/ExemploBancoDados01/src/br/com/proway/estacionamento/visao/ListaVendaJFrame.java</file>
         </group>
     </open-files>
 </project-private>

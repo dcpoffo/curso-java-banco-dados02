@@ -24,7 +24,7 @@ public class VendaDAO extends BaseDAO implements GenericInterface<Venda> {
     public int inserir(Venda entidade) {
         try {
             conectar();
-            String sql = "insert into vendas (id_Cliente, valor, registro) values (?,?,1)";
+            String sql = "insert into vendas (id_Cliente, valor, registro_ativo) values (?,?,1)";
             PreparedStatement ps = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setInt(1, entidade.getIdCliente());
             ps.setDouble(2, entidade.getValor());
@@ -60,30 +60,38 @@ public class VendaDAO extends BaseDAO implements GenericInterface<Venda> {
         }
     }
 
-    @Override
-    public ArrayList<Venda> obterTodos() {
-        
+    public ArrayList<Venda> obterTodosVenda(String busca, int pagina, int quantidade) {
+        busca = "%" + busca + "%";
         ArrayList<Venda> vendas = new ArrayList<>();
-        
+
         try {
             conectar();
-            Statement st = conexao.createStatement();
-            String sql = "select * from vendas where inner join cliente on (vendas.id_cliente = cliente.id where registro_ativo";
-            ResultSet rs = st.executeQuery(sql);
+            String sql = "select * from vendas inner join cliente on (vendas.id_cliente = cliente.id) "
+                    + "\nwhere registro_ativo = 1 and cliente.nome like ? order by vendas.id"
+                    + "\nLIMIT ?,?";
+
+            int quantidadeParam = 1;
+
+            PreparedStatement st = conexao.prepareStatement(sql);
+            st.setString(quantidadeParam++, busca);
+            st.setInt(quantidadeParam++, pagina * quantidade);
+            st.setInt(quantidadeParam, quantidade);
+
+            ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Venda venda = new Venda();
                 venda.setId(rs.getInt("vendas.id"));
                 venda.setValor(rs.getDouble("vendas.valor"));
-                
+
                 venda.setIdCliente(rs.getInt("vendas.id_cliente"));
                 Cliente cliente = new Cliente();
-                cliente.setId(rs.getInt("Clientes.id"));
-                cliente.setNome(rs.getString("Clientes.nome"));
-                cliente.setCpf(rs.getString("clientes.cpf"));
+                cliente.setId(rs.getInt("cliente.id"));
+                cliente.setNome(rs.getString("cliente.nome"));
+                cliente.setCpf(rs.getString("cliente.cpf"));
                 venda.setCliente(cliente);
                 vendas.add(venda);
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -110,12 +118,12 @@ public class VendaDAO extends BaseDAO implements GenericInterface<Venda> {
 
     @Override
     public Venda obterTodosId(int id) {
-        
+
         Venda venda = null;
         try {
             conectar();
             String sql = "Select * from vendas where id = ? and registro_ativo = 1";
-            PreparedStatement ps =conexao.prepareStatement(sql);
+            PreparedStatement ps = conexao.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -130,7 +138,7 @@ public class VendaDAO extends BaseDAO implements GenericInterface<Venda> {
             desconectar();
         }
         return venda;
-        
+
     }
 
     @Override
@@ -154,4 +162,31 @@ public class VendaDAO extends BaseDAO implements GenericInterface<Venda> {
         }
     }
 
+    @Override
+    public ArrayList<Venda> obterTodos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int contabilizarFiltrados(String busca) {
+        try {
+            conexao = conexaoFactory.conectar();
+            String sql = "select count(vendas.id) from vendas"
+                    + "\ninner join cliente on(vendas.id_cliente = cliente.id)"
+                    + "\nwhere vendas.registro_ativo = 1 and cliente.nome like ?";
+            busca = "%" + busca + "%";
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, busca);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        } finally {
+            desconectar();
+        }
+        return -1;
+    }
+    
 }

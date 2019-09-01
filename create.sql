@@ -39,4 +39,4 @@ CREATE TABLE `contatos` (
   CONSTRAINT `contatos_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
-drop table  vendas;
+

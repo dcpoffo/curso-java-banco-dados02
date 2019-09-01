@@ -1,0 +1,9 @@
+jdbc:mysql://localhost:3306/BANDO_DE_DADOS?Timezone=true&serverTimezone=UTC
+
+ou
+
+no Workbench
+
+SET GLOBAL time_zone = '+4:00'
+
+SET GLOBAL time_zone = '-3:00'
