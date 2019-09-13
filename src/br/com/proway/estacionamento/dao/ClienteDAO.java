@@ -26,7 +26,8 @@ public class ClienteDAO implements ClienteInterface {
         try {
             conexao = new Conexao().conectar();
             PreparedStatement ps = conexao.prepareStatement(
-                    "INSERT INTO cliente (nome, cpf, telefone, unidadefederativa, cidade, cep, logradouro, complemento, numero) values (?,?,?,?,?,?,?,?,?)");
+                    "INSERT INTO cliente (nome, cpf, telefone, unidadefederativa, cidade, cep, logradouro,"
+                            + "complemento, numero) values (?,?,?,?,?,?,?,?,?)");
             ps.setString(1, cliente.getNome());
             ps.setString(2, cliente.getCpf());
             ps.setString(3, cliente.getTelefone());
