@@ -327,7 +327,6 @@ public class ListaVendaJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonApagarActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        // TODO add your handling code here:
         
         int linhaSelecionada = jTable.getSelectedRow();
 

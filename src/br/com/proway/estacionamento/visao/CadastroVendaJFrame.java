@@ -60,7 +60,7 @@ public class CadastroVendaJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBoxCliente = new javax.swing.JComboBox<>();
+        jComboBoxCliente = new javax.swing.JComboBox<br.com.proway.estacionamento.modelo.Cliente>();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldValor = new javax.swing.JTextField();
         jButtonSalvar = new javax.swing.JButton();
@@ -75,7 +75,7 @@ public class CadastroVendaJFrame extends javax.swing.JFrame {
         jLabel2.setText("Valor");
 
         jButtonSalvar.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/proway/estacionamento/dao/imagens/diskette (1).png"))); // NOI18N
+        jButtonSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/proway/estacionamento/imagens/diskette (1).png"))); // NOI18N
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,14 +89,16 @@ public class CadastroVendaJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBoxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +112,7 @@ public class CadastroVendaJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -124,7 +126,7 @@ public class CadastroVendaJFrame extends javax.swing.JFrame {
         Venda venda = new Venda();
         
         if (jComboBoxCliente.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(this, "Selcione um cliente");
+            JOptionPane.showMessageDialog(this, "Selecione um cliente");
             jComboBoxCliente.showPopup();;
             return;
         }
